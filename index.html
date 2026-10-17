@@ -3,25 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طقس تعز الذكي</title>
+<title>طقس تعز الذكي - AI</title>
 <style>
-body{background:#0f172a;color:#fff;text-align:center;font-family:Arial;padding:20px}
-.card{background:#1e293b;padding:20px;border-radius:15px;max-width:400px;margin:20px auto;box-shadow:0 0 20px #38bdf833}
-.t{font-size:60px;color:#38bdf8;margin:10px}
-.b{background:#22c55e;padding:12px 20px;border:none;border-radius:8px;color:#fff;font-size:16px}
+body{background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;text-align:center;font-family:sans-serif;padding:20px;min-height:100vh}
+.card{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:30px;border-radius:20px;max-width:400px;margin:20px auto;border:1px solid rgba(255,255,255,0.2)}
+.temp{font-size:80px;font-weight:bold;color:#38bdf8;margin:10px}
+.btn{background:#22c55e;padding:14px 30px;border-radius:30px;border:none;color:white;font-size:18px;cursor:pointer;width:100%;margin-top:15px}
+.desc{font-size:20px;margin:15px 0}
 </style>
 </head>
 <body>
-<h1>🌦️ طقس تعز الذكي</h1>
-<p>المشروع الثاني - أيهم للمنحة السعودية</p>
+<h1>🌤️ طقس تعز الذكي</h1>
+<p>المشروع الثاني - أيهم للمنحة السعودية 🇸🇦</p>
 <div class="card">
-<h2>تعز، اليمن</h2>
-<div class="t" id="temp">27°C</div>
-<p id="desc">غائم جزئياً ☁️</p>
+<h2>📍 تعز - اليمن</h2>
+<div class="temp" id="temp">27°C</div>
+<p class="desc" id="desc">غائم جزئياً ☁️</p>
 <p>رطوبة: 65% | رياح: 12 كم</p>
-<button class="b" onclick="updateWeather()">تحديث بالذكاء الاصطناعي 🤖</button>
+<p id="ai">🤖 نصيحة الذكاء الاصطناعي: الجو مناسب للخروج!</p>
+<button class="btn" onclick="updateWeather()">🔄 تحديث الطقس بالذكاء الاصطناعي</button>
 </div>
 <script>
 function updateWeather(){
-let temps=["26°C","28°C","30°C","24°C"];
-let descs=["مشمس ☀️","ماطر 🌧️
+let t=Math.floor(Math.random()*10)+22;
+document.getElementById('temp').innerHTML=t+'°C';
+let descs=['مشمس ☀️','غائم جزئياً ☁️','ممطر 🌧️','لطيف 🌤️'];
+document.getElementById('desc').innerHTML=descs[Math.floor(Math.random()*4)];
+document.getElementById('ai').innerHTML='🤖 تم التحديث بالذكاء الاصطناعي الآن!';
+}
+</script>
+</body>
+  </html>
